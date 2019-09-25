@@ -1,0 +1,10 @@
+apiVersion: samplecontroller.k8s.io/v1alpha1
+kind: SessionJob
+metadata:
+  name: example-sessionjob2
+spec:
+  deploymentName: example-sessionjob2
+  replicas: 1
+  taskInput: /shared/input2.txt
+  taskOutput: /shared/output2.txt
+  taskFunction: /shared/myfunc2.py
