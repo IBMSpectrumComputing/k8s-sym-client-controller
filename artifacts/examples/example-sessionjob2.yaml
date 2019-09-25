@@ -7,4 +7,4 @@ spec:
   replicas: 1
   taskInput: /shared/input2.txt
   taskOutput: /shared/output2.txt
-  taskFunction: /shared/myfunc.py
+  taskFunction: /shared/myfunc2.py
