@@ -22,7 +22,7 @@ go build -o sym-client-controller .
 ./sym-client-controller
 
 # create a CustomResourceDefinition
-kubectl create -f artifacts/examples/crd-status-subresource.yaml
+kubectl create -f artifacts/examples/crd.yaml
 
 # create a custom resource of type SessionJob to run tasks
 # user can specify the task input/output and custom function as following:

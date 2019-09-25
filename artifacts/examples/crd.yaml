@@ -9,3 +9,5 @@ spec:
     kind: SessionJob
     plural: sessionjobs
   scope: Namespaced
+  subresources:
+    status: {}
