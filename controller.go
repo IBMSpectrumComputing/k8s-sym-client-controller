@@ -19,6 +19,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 	"os/exec"
 	"strconv"
 	"strings"
@@ -248,6 +249,13 @@ func (c *Controller) syncHandler(key string) error {
 	namespace, name, err := cache.SplitMetaNamespaceKey(key)
 	if err != nil {
 		utilruntime.HandleError(fmt.Errorf("invalid resource key: %s", key))
+		return nil
+	}
+
+	envNS := os.Getenv("NAMESPACE")
+
+	if strings.Count(envNS, "") > 1 && envNS != namespace {
+		klog.Infof("namespace %s is ignored as it is not same as the env %s.", namespace, envNS)
 		return nil
 	}
 
