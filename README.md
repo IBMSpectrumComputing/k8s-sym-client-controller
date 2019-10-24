@@ -35,7 +35,7 @@ kubectl create -f artifacts/examples/crd.yaml
 # the taskOuput is used to record the output from Symphony client
 # the taskFunction is the function that defined by user to handle the tasks from taskInput
 #
-# to create a request for a specific namespace, add the namespace name at the end of the command
+# to create a request for a specific namespace, add the namespace name at the end of the command like "-n dept-a"
 kubectl create -f artifacts/examples/example-sessionjob.yaml
 
 # check task status through the custom resource
