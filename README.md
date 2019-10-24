@@ -19,7 +19,7 @@ This particular example demonstrates how to perform basic Symphony client operat
 go build -o sym-client-controller .
 
 # copy sym-client-controller sym.sh sym_monitor.sh into the /opt/ibm/sym-client-controller folder of the Symhony client container, grant 775 permission for the .sh files and then run the following command:
-# to only handle the specific request from a namespace, set the namespace name here with environment variable like "export NAMESPACE=dept-a"
+# to handle the requests for a namespace only, set the namespace name with environment variable like "export NAMESPACE=dept-a"
 ./sym-client-controller
 
 # create a CustomResourceDefinition
@@ -34,6 +34,7 @@ kubectl create -f artifacts/examples/crd.yaml
 # the content in taskInput is from user, Symphony client will create tasks based on it
 # the taskOuput is used to record the output from Symphony client
 # the taskFunction is the function that defined by user to handle the tasks from taskInput
+#
 # to create a request for a specific namespace, add the namespace name at the end of the command
 kubectl create -f artifacts/examples/example-sessionjob.yaml
 
