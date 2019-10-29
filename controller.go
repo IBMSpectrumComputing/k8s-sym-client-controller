@@ -346,7 +346,7 @@ func (c *Controller) updateSessionJobStatus(sessionjob *samplev1alpha1.SessionJo
 	// You can use DeepCopy() to make a deep copy of original object and modify this copy
 	// Or create a copy manually for better performance
 	sessionjobCopy := sessionjob.DeepCopy()
-	//sessionjobCopy.Status.AvailableReplicas = deployment.Status.AvailableReplicas
+	// sessionjobCopy.Status.AvailableReplicas = deployment.Status.AvailableReplicas
 
 	command := "/opt/ibm/k8s-sym-client-controller/sym_monitor.sh"
 	cmd := exec.Command("/bin/bash", "-c", command)
